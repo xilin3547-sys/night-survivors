@@ -1,0 +1,115 @@
+{
+  "window": { "width": 390, "height": 700 },
+  "hero": {
+    "speed": 120,
+    "hp": 100,
+    "hit_radius": 12,
+    "magnet_radius": 60,
+    "mouse_dead_zone": 12
+  },
+  "bat": {
+    "hp": 8,
+    "speed": 100,
+    "damage": 5,
+    "xp": 1,
+    "radius": 10,
+    "contact_cooldown": 0.5
+  },
+  "slime": {
+    "hp": 30,
+    "speed": 55,
+    "damage": 8,
+    "xp": 2,
+    "radius": 12,
+    "contact_cooldown": 0.5
+  },
+  "ghost": {
+    "hp": 15,
+    "speed": 135,
+    "damage": 6,
+    "xp": 2,
+    "radius": 11,
+    "contact_cooldown": 0.5
+  },
+  "demon": {
+    "hp": 800,
+    "speed": 85,
+    "damage": 20,
+    "xp": 0,
+    "radius": 26,
+    "contact_cooldown": 0.5,
+    "draw_scale": 2,
+    "boss": true
+  },
+  "gems": { "speed": 300, "radius": 10 },
+  "xp": { "first_level": 5, "per_level": 3 },
+  "level_up": { "cards_shown": 3, "heal_amount": 30 },
+  "weapon_slots": 3,
+  "spark_wand": {
+    "level_1": { "damage": 10, "period": 0.8, "sparks": 1 },
+    "extra_level": { "damage": 3, "period": 0.08 },
+    "extra_spark_levels": [3, 5],
+    "speed": 400,
+    "radius": 4
+  },
+  "spin_blades": {
+    "level_1": { "damage": 8, "blades": 2 },
+    "extra_level": { "damage": 3 },
+    "extra_blade_levels": [2, 4],
+    "orbit_radius": 60,
+    "turn_period": 1.5,
+    "hit_radius": 14,
+    "hit_cooldown": 0.5
+  },
+  "holy_ring": {
+    "level_1": { "damage": 5, "radius": 50 },
+    "extra_level": { "damage": 2, "radius": 10 },
+    "period": 0.5,
+    "pulse": 0.2
+  },
+  "passives": {
+    "swift_boots": { "speed_bonus": 0.1 },
+    "big_heart": { "hp": 20 },
+    "magnet": { "radius": 30 }
+  },
+  "items": {
+    "spark_wand": { "kind": "weapon", "name": "Spark Wand", "short": "Spark", "text": "Shoots a spark at the nearest enemy", "max_level": 5 },
+    "spin_blades": { "kind": "weapon", "name": "Spin Blades", "short": "Blades", "text": "Blades circle around you", "max_level": 5 },
+    "holy_ring": { "kind": "weapon", "name": "Holy Ring", "short": "Ring", "text": "Hurts every enemy near you", "max_level": 5 },
+    "swift_boots": { "kind": "passive", "name": "Swift Boots", "short": "Boots", "text": "+10% walking speed", "max_level": 5 },
+    "big_heart": { "kind": "passive", "name": "Big Heart", "short": "Heart", "text": "+20 max HP and heal 20", "max_level": 5 },
+    "magnet": { "kind": "passive", "name": "Magnet", "short": "Magnet", "text": "+30 px gem magnet", "max_level": 5 },
+    "heal": { "kind": "special", "name": "Heal", "short": "Heal", "text": "Heal 30 HP", "max_level": 5 }
+  },
+  "spawn": {
+    "interval": 1.0,
+    "max_per_second": 8,
+    "circle_distance": 380,
+    "removal_distance": 700,
+    "boss_return_distance": 600,
+    "max_alive": 120,
+    "waves": [
+      { "from": 0, "types": ["bat"], "min_alive": 12 },
+      { "from": 15, "types": ["bat"], "min_alive": 20 },
+      { "from": 30, "types": ["bat", "slime"], "min_alive": 28 },
+      { "from": 45, "types": ["slime", "ghost"], "min_alive": 36 },
+      { "from": 60, "types": ["bat", "ghost"], "min_alive": 45 },
+      { "from": 75, "types": ["bat", "slime", "ghost"], "min_alive": 55 },
+      { "from": 90, "types": ["bat", "slime"], "min_alive": 55, "boss": true },
+      { "from": 105, "types": ["bat"], "min_alive": 75 }
+    ]
+  },
+  "world": { "tile": 48 },
+  "victory": { "goal_time": 120 },
+  "feel": {
+    "number_time": 0.5,
+    "number_rise": 34,
+    "max_numbers": 24,
+    "flash_time": 0.15,
+    "max_flashes": 24,
+    "shake_time": 0.18,
+    "shake_pixels": 6
+  },
+  "sounds": { "volume": 0.6, "same_gap": 0.07 },
+  "time": { "step": 60 }
+}
